@@ -1,0 +1,22 @@
+:host {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* justify-content: flex-start; */
+    align-items: center;
+    background-color: #1bb1dc;
+}
+.card {
+    background: #ffe157;
+    width: 300px;
+    height: 300px;
+    padding: 1em;
+}
+
+.card__header {
+    display: flex;
+    justify-content: flex-start;
+    /* justify-content: center; */
+    /* justify-content: flex-end; */
+}

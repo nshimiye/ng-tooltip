@@ -1,0 +1,14 @@
+<div class="tooltip" (mouseover)="checkOffScreen($event)">
+  <div class="tooltip__label">
+      <ng-content select="[label]"></ng-content>
+  </div>
+  <div class="tooltip__tip" #tip>
+    <div
+      class="tooltip__tip__content"
+      [class.tooltip__tip__content--fixto-left]="isLeftOffScreen"
+      [class.tooltip__tip__content--fixto-right]="isRightOffScreen"
+    >
+      <ng-content select="[tip]"></ng-content>
+    </div>
+  </div>
+</div>

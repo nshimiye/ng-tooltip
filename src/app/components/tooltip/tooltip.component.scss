@@ -1,0 +1,81 @@
+:host {
+    --tip-content-padding: 15px;
+    --tip-content-width: 250px;
+    --tip-content-half-width: calc(var(--tip-content-width) / 2);
+    --tip-content-view-spacing: 5px;
+    --tip-pointer-height: 44px;
+    --tip-pointer-half-height: calc(var(--tip-pointer-height) / 2);
+    --tip-pointer-top: calc(100% + 0.414 * var(--tip-pointer-half-height));  /* 0.414 = trigonometric factor cause by the rotation rotate(-45deg) */
+}
+
+.tooltip {
+    position: relative;
+    width: fit-content; /* takes the width of the wrapped content, NOTE that this does not take into account content with absolute position */
+    display: table; /* fixes IE "missing fit-content" issue */
+}
+
+/* START tip-pointer */
+.tooltip:hover::before {
+    position: absolute;
+    top: 100%;
+    left: calc(50% - var(--tip-pointer-half-height));
+    content: " ";
+    height: 0;
+    width: 0;
+
+    border: var(--tip-pointer-half-height) solid transparent;
+}
+
+.tooltip:hover::after {
+    top: var(--tip-pointer-top);
+    left: calc(50% - var(--tip-pointer-half-height));
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+
+    border: var(--tip-pointer-half-height) solid transparent;
+    border-top-color: #fff;
+    border-right-color: #fff;
+    box-shadow: 1px -1px 0 0 rgba(0, 0, 0, 0.1);
+
+    transform-origin: center;
+    transform: rotate(-45deg);
+}
+/* END tip-pointer */
+
+.tooltip__label {
+    width: fit-content;
+    display: table;
+    cursor: help;
+}
+
+.tooltip__tip {
+    width: fit-content;
+    display: none;
+    position: absolute;
+    top: calc(var(--tip-pointer-top) + var(--tip-pointer-half-height));
+    left: calc(50% - var(--tip-content-half-width) - var(--tip-content-padding));
+}
+
+.tooltip:hover .tooltip__tip {
+    display: table;
+}
+
+.tooltip__tip__content {
+    background-color: white;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.3);
+    width: var(--tip-content-width);
+    padding: var(--tip-content-padding);
+}
+
+.tooltip__tip__content--fixto-left {
+    position: fixed;
+    left: var(--tip-content-view-spacing);
+}
+
+.tooltip__tip__content--fixto-right {
+    position: fixed;
+    right: var(--tip-content-view-spacing);
+}
