@@ -14,9 +14,7 @@ export class TooltipComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    this.checkOffScreen()
-  }
+  ngOnInit() {}
 
   checkOffScreen() {
     const tipElement = this.tipRef.nativeElement;
