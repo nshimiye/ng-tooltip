@@ -5,16 +5,12 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   templateUrl: './tooltip.component.html',
   styleUrls: ['./tooltip.component.scss']
 })
-export class TooltipComponent implements OnInit {
+export class TooltipComponent {
   isLeftOffScreen = false;
   isRightOffScreen = false;
 
   @ViewChild('tip') tipRef: ElementRef
   @ViewChild('tipContent') tipContentRef: ElementRef
-
-  constructor() {}
-
-  ngOnInit() {}
 
   checkOffScreen() {
     const tipElement = this.tipRef.nativeElement;
