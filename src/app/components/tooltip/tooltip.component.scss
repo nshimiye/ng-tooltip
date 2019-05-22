@@ -52,15 +52,15 @@
 }
 
 .tooltip__tip {
-    width: fit-content;
+    width: 50%;
     display: none;
     position: absolute;
     top: calc(var(--tip-pointer-top) + var(--tip-pointer-half-height));
-    left: calc(50% - var(--tip-content-half-width) - var(--tip-content-padding));
+    left: 50%;
 }
 
 .tooltip:hover .tooltip__tip {
-    display: table;
+    display: block;
 }
 
 .tooltip__tip__content {
@@ -68,14 +68,18 @@
     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.3);
     width: var(--tip-content-width);
     padding: var(--tip-content-padding);
+    position: absolute;
+    left: calc(0px - var(--tip-content-half-width) - var(--tip-content-padding));
 }
 
 .tooltip__tip__content--fixto-left {
     position: fixed;
     left: var(--tip-content-view-spacing);
+    right: auto;
 }
 
 .tooltip__tip__content--fixto-right {
     position: fixed;
+    left: auto;
     right: var(--tip-content-view-spacing);
 }
