@@ -17,16 +17,6 @@ export class TooltipComponent implements OnInit {
   ngOnInit() {
     this.checkOffScreen()
   }
-  // checkOffScreen(e) {
-  //   console.log(e.target, e.currentTarget);
-    
-  //   const tipElement = this.tipRef.nativeElement;
-  //   console.log(tipElement);
-
-  //   this.isLeftOffScreen = tipElement.getBoundingClientRect().left < 0;
-  //   this.isRightOffScreen = tipElement.getBoundingClientRect().right > document.body.getBoundingClientRect().right;
-  //   console.log(tipElement.getBoundingClientRect().right, document.body.getBoundingClientRect().right);
-  // }
 
   checkOffScreen() {
     const tipElement = this.tipRef.nativeElement;
@@ -37,7 +27,6 @@ export class TooltipComponent implements OnInit {
 
     this.isLeftOffScreen = tipElementLeft < tipContentWidth / 2;
     this.isRightOffScreen = tipElementLeft + (tipContentWidth / 2) > bodyRight;
-    console.log(tipElementLeft + tipContentWidth, document.body.getBoundingClientRect().right);
   }
 
 }
