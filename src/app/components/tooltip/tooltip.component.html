@@ -1,4 +1,4 @@
-<div class="tooltip" (mousedown)="checkOffScreen($event)">
+<div class="tooltip" (mouseenter)="checkOffScreen($event)" (mousedown)="checkOffScreen($event)">
   <div class="tooltip__label">
       <ng-content select="[label]"></ng-content>
   </div>

@@ -1,11 +1,12 @@
 :host {
-    width: 100vw;
+    width: calc(100vw - 2px);
     height: 100vh;
     display: flex;
-    justify-content: center;
-    /* justify-content: flex-start; */
+    justify-content: space-between;
     align-items: center;
     background-color: #1bb1dc;
+    padding-left: 1px;
+    padding-right: 1px;
 }
 .card {
     background: #ffe157;
@@ -17,6 +18,11 @@
 .card__header {
     display: flex;
     justify-content: flex-start;
-    /* justify-content: center; */
-    /* justify-content: flex-end; */
+}
+
+.card__header--center {
+    justify-content: center;
+}
+.card__header--right {
+    justify-content: flex-end;    
 }
