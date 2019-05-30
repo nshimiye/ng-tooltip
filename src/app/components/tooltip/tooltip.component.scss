@@ -68,6 +68,7 @@
     box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.3);
     width: var(--tip-content-width);
     padding: var(--tip-content-padding);
+    white-space: normal; /* allow for paragraphs to take multiple lines */
     position: absolute;
     left: calc(0px - var(--tip-content-half-width) - var(--tip-content-padding));
 }
